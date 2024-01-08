@@ -1,0 +1,44 @@
+{
+  "name": "zhangjinxi-cli",
+  "version": "1.0.0",
+  "description": "项目开发脚手架：通过package.json中的bin字段，注册zhangjinxi总命令",
+  "main": "./bin/index.js",
+  "bin": {
+    "zhangjinxi": "./bin/index.js"
+  },
+  "keywords": [
+    "这里是关键字",
+    "生成vue脚手架模板",
+    "zhangjinxi",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinxi1334640772/zhangjinxi-cli.git"
+  },
+  "author": "dadaiwei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jinxi1334640772/zhangjinxi-cli/issues"
+  },
+  "homepage": "https://github.com/jinxi1334640772/zhangjinxi-cli#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "commander": "^5.0.0",
+    "compression-webpack-plugin": "^3.0.0",
+    "css-split-webpack-plugin": "^0.2.6",
+    "download-git-repo": "^3.0.2",
+    "html-webpack-plugin": "^4.2.0",
+    "inquirer": "^7.1.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "ora": "^4.0.3",
+    "semver": "^7.3.2",
+    "webpack": "^4.42.1",
+    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  }
+}
