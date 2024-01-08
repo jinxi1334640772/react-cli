@@ -1,6 +1,6 @@
 {
   "name": "zhangjinxi-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "项目开发脚手架：通过package.json中的bin字段，注册zhangjinxi总命令",
   "main": "./bin/index.js",
   "bin": {
