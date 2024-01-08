@@ -8,7 +8,23 @@ const ora = require('ora');
 const {successLog, errorLog} = require('../utils/index');
 const templateUrl = "jinxi1334640772/vue3-element-admin";
 
-// 修改package.json中的name
+// 下载项目模板
+function downloadTemplate(appName) {
+  return new Promise((resolve, reject) => {
+    const spinner = ora('开始生成项目');
+    spinner.start();
+    download(templateUrl, `./${appName}`, {clone: false}, err => {
+      spinner.stop();
+      if (err) {
+        return reject(err);
+      }
+      successLog('项目生成成功');
+      resolve();
+    });
+  });
+}
+
+// 修改项目package.json中的name
 function editPackageName(appName) {
   return new Promise((resolve, reject) => {
     const packageJsonPath = path.resolve(process.cwd(), `${appName}/package.json`);
@@ -42,27 +58,12 @@ function installPackages(appName) {
   });
 }
 
-// 下载项目模板
-function downloadTemplate(appName) {
-  return new Promise((resolve, reject) => {
-    const spinner = ora('开始生成项目');
-    spinner.start();
-    download(templateUrl, `./${appName}`, {clone: false}, err => {
-      spinner.stop();
-      if (err) {
-        return reject(err);
-      }
-      successLog('项目生成成功');
-      resolve();
-    });
-  });
-}
 
 async function create(appName) {
   try {
-    await downloadTemplate(appName);
-    await editPackageName(appName);
-    // await installPackages(appName); // 暂不安装依赖
+    await downloadTemplate(appName); // 下载模板文件
+    await editPackageName(appName); // 修改项目package.json项目名
+    await installPackages(appName); // 安装项目依赖
   } catch (err) {
     errorLog(err);
     process.exit(1);
