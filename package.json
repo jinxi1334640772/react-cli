@@ -2,9 +2,9 @@
   "name": "zhangjinxi-cli",
   "version": "1.0.1",
   "description": "项目开发脚手架：通过package.json中的bin字段，注册zhangjinxi总命令",
-  "main": "./bin/index.js",
+  "main": "./bin.js",
   "bin": {
-    "zhangjinxi": "./bin/index.js"
+    "zhangjinxi": "./bin.js"
   },
   "keywords": [
     "这里是关键字",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/jinxi1334640772/zhangjinxi-cli.git"
   },
-  "author": "dadaiwei",
+  "author": "zhangjinxi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jinxi1334640772/zhangjinxi-cli/issues"
