@@ -1,6 +1,6 @@
 {
   "name": "zhangjinxi-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "项目开发脚手架",
   "main": "./bin.js",
   "bin": {
