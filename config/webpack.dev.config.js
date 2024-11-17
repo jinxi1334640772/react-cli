@@ -1,13 +1,12 @@
 const path = require("path");
 const merge = require("webpack-merge");
 const baseConfig = require("./webpack.com.config");
-const {appBuild} = require("./pathConfig");
 
 module.exports = merge(baseConfig, {
   mode: "development",
   devtool: "cheap-module-eval-source-map",
   devServer: {
-    contentBase: dist,
+    contentBase: 'dist',
     publicPath: '',
     host: "localhost",
     port: 3000,
