@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: "[name].[hash:7].js",
-    path: 'dist'
+    path: '/dist'
   },
   module: {
     rules: [

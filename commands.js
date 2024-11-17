@@ -66,12 +66,15 @@ const dev = function dev() {
 };
 
 // 下载项目模板
+// const templateUrl =
+//   "jinxi1334640772/vue3-element-admin.git#master";
+// const templateUrl =
+//   "direct:https://github.com/jinxi1334640772/vue3-element-admin.git#master";
 const templateUrl =
-  "direct:https://gitee.com/myPrettyCode/vue3-element-admin.git";
+  "direct:https://gitee.com/myPrettyCode/vue3-element-admin.git#master";
 function downloadTemplate(appName) {
   return new Promise((resolve, reject) => {
-    const spinner = ora("开始生成项目");
-    spinner.start();
+    const spinner = ora("开始生成项目").start();
 
     /** download(repository, destination, options, callback) clone远程仓库到本地目录
      * @repository 这是你要下载的Git仓库的URL。它可以是GitHub、GitLab或Bitbucket等平台上的仓库地址。其他仓库：direct:https://gitee.com/myPrettyCode/vue3-element-admin.git
@@ -83,19 +86,14 @@ function downloadTemplate(appName) {
      *    recursive 如果为true，则下载子模块。
      * @callback 在下载过程结束后被调用
      */
-    download(
-      templateUrl,
-      `./${appName}`,
-      { clone: false, progress: true, recursive: true },
-      err => {
-        spinner.stop();
-        if (err) {
-          return reject(err);
-        }
-        successLog("项目生成成功");
-        resolve();
+    download(templateUrl, `./${appName}`, { clone: true }, err => {
+      spinner.stop();
+      if (err) {
+        return reject(err);
       }
-    );
+      successLog("项目生成成功");
+      resolve();
+    });
   });
 }
 
