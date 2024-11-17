@@ -1,22 +1,22 @@
 {
   "name": "zhangjinxi-cli",
-  "version": "1.0.3",
-  "description": "项目开发脚手架：通过package.json中的bin字段，注册zhangjinxi总命令",
+  "version": "1.0.4",
+  "description": "项目开发脚手架",
   "main": "./bin.js",
   "bin": {
     "zhangjinxi": "./bin.js"
   },
   "keywords": [
-    "这里是关键字",
+    "项目开发脚手架",
     "生成vue脚手架模板",
-    "zhangjinxi",
-    "cli"
+    "vue3",
+    "后台管理系统"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jinxi1334640772/zhangjinxi-cli.git"
   },
-  "author": "zhangjinxi",
+  "author": "1334640772@qq.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jinxi1334640772/zhangjinxi-cli/issues"
