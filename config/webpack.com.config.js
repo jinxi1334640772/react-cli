@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CSSSplitWebpackPlugin = require("css-split-webpack-plugin").default;
+const cssnano = require('cssnano')
 
 module.exports = {
   entry: {
@@ -91,7 +92,7 @@ module.exports = {
     }),
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css$/g,
-      cssProcessor: require("cssnano"), // //引入cssnano配置压缩选项
+      cssProcessor: cssnano, // //引入cssnano配置压缩选项
       cssProcessorPluginOptions: {
         preset: [
           "default",

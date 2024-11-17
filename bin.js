@@ -36,7 +36,7 @@ commander
 commander.command("build").description("生产环境打包构建").action(prod);
 
 // 注册 exec <cmd> 命令
-program
+commander
   .command("exec <cmd>")
   .alias("ex")
   .description("execute the given remote cmd")
