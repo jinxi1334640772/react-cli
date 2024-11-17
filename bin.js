@@ -35,5 +35,45 @@ commander
 // 注册build命令
 commander.command("build").description("生产环境打包构建").action(prod);
 
+// 注册 exec <cmd> 命令
+program
+  .command("exec <cmd>")
+  .alias("ex")
+  .description("execute the given remote cmd")
+  .option("-e, --exec_mode <mode>", "Which exec mode to use")
+  .option("-c, --cheese [type]", "指定类型：cheese [marble]", "marble")
+  .action(function (cmd, options) {
+    console.log('exec "%s" using %s mode', cmd, options.exec_mode);
+  })
+  .on("--help", function () {
+    console.log("");
+    console.log("Examples:");
+    console.log("");
+    console.log("  $ deploy exec sequential");
+    console.log("  $ deploy exec async");
+  });
+
 // 解析控制台输入的参数
 commander.parse(process.argv);
+
+// 监控输入--help的事件回调
+commander.on("--help", function () {
+  console.log("");
+  console.log("Examples:");
+  console.log("  $ custom-help --help");
+  console.log("  $ custom-help -h");
+});
+
+//通过侦听command和option事件来执行自定义操作。
+commander.on("option:cheese", function () {
+  console.log("option:cheese:this.cheese- %s", this.cheese);
+});
+
+// error on unknown commands
+commander.on("command:*", function () {
+  console.error(
+    "Invalid command: %s\nSee --help for a list of available commands.",
+    commander.args.join(" ")
+  );
+  process.exit(1);
+});

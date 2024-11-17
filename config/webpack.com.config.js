@@ -3,15 +3,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CSSSplitWebpackPlugin = require("css-split-webpack-plugin").default;
-const {appIndexJs, appBuild, appHtml} = require("./pathConfig");
 
 module.exports = {
   entry: {
-    app: appIndexJs
+    app: 'bin.js'
   },
   output: {
     filename: "[name].[hash:7].js",
-    path: appBuild
+    path: 'dist'
   },
   module: {
     rules: [
@@ -113,7 +112,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "index.html", // 模板文件名
-      template: appHtml, // 模板文件源
+      template: '../index.html', // 模板文件源
       minify: {
         collapseWhitespace: true, // 压缩空格
         minifyCSS: true, // 压缩css
